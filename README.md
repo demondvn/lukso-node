@@ -1,7 +1,7 @@
 # lukso-node
 
 ## Build
-  docker build . -t lukso
+    docker build . -t lukso
   
 ## Run
-  docker run -d --name lukso lukso
+    docker run -d --name lukso lukso
