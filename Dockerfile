@@ -1,6 +1,6 @@
-FROM docker:latest
+FROM docker:dind
 
-RUN apt-get update && apt-get -y install sudo curl wget
+RUN apt update && apt -y install sudo curl wget
 # RUN usermod -aG sudo 
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers 
 
