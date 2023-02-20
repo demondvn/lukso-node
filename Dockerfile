@@ -6,9 +6,9 @@ RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 RUN pip install 'docker-compose==1.8.0'
 RUN docker-compose --version
 WORKDIR lukso-l16-testnet
-RUN curl https://install.l16.lukso.network -o installer.sh && chmod +x installer.sh && ./installer.sh
+RUN curl https://github.com/lukso-network/tools-lukso-cli-deprecated/releases/download/v0.4.4/lukso-cli-linux-amd64 /usr/local/bin/lukso
 # RUN lukso -v && lukso network init --chain l16
 # CMD lukso network start
 COPY script.sh script.sh
-RUN chmod +x script.sh
+RUN chmod +x script.sh /usr/local/bin/lukso
 CMD ./script.sh
