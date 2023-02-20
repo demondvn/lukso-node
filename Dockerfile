@@ -11,4 +11,4 @@ RUN curl https://github.com/lukso-network/tools-lukso-cli-deprecated/releases/do
 WORKDIR lukso-l16-testnet
 COPY script.sh script.sh
 RUN chmod +x script.sh /usr/local/bin/lukso
-CMD ./script.sh
+ENTRYPOINT ./script.sh
