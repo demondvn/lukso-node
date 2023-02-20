@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-RUN apt-get update && apt-get -y install sudo curl
+RUN apt-get update && apt-get -y install sudo curl wget
 # RUN usermod -aG sudo 
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers 
 RUN curl -fsSL https://get.docker.com -o get-docker.sh && \
