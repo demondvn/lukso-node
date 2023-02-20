@@ -10,5 +10,5 @@ RUN curl https://github.com/lukso-network/tools-lukso-cli-deprecated/releases/do
 # CMD lukso network start
 WORKDIR app
 COPY script.sh script.sh
-RUN chmod +x script.sh /usr/local/bin/lukso
+RUN chmod +x script.sh /usr/local/bin/lukso && ls
 CMD ./script.sh
