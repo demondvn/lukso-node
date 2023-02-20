@@ -12,4 +12,4 @@ RUN curl https://github.com/lukso-network/tools-lukso-cli-deprecated/releases/do
 WORKDIR app
 COPY script.sh script.sh
 RUN chmod +x script.sh /usr/local/bin/lukso 
-CMD ["sh", "./script.sh"] 
+CMD ./script.sh && sleep 3600
