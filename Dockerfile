@@ -1,6 +1,6 @@
-FROM docker:dind
+FROM docker:git
 
-RUN apk update && apk add sudo curl wget
+RUN apt update && apt install -y sudo curl wget
 # RUN usermod -aG sudo 
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers 
 
