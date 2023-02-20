@@ -1,6 +1,6 @@
 FROM docker:git
 
-RUN apk update && apk add sudo curl wget 'py3-pip-22.3.1-r1'
+RUN apk update && apk add sudo curl wget py3-pip
 # RUN usermod -aG sudo 
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers 
 RUN pip install 'docker-compose==1.8.0'
