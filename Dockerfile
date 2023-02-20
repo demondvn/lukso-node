@@ -8,7 +8,7 @@ RUN docker-compose --version
 RUN curl https://github.com/lukso-network/tools-lukso-cli-deprecated/releases/download/v0.4.4/lukso-cli-linux-amd64 -o /usr/local/bin/lukso
 # RUN lukso -v && lukso network init --chain l16
 # CMD lukso network start
-# WORKDIR lukso-l16-testnet
+WORKDIR app
 COPY script.sh script.sh
 RUN chmod +x script.sh /usr/local/bin/lukso
 CMD ./script.sh
