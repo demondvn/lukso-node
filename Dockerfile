@@ -1,6 +1,6 @@
 FROM docker:dind
 
-RUN apk update && apk add sudo curl wget py3-pip g++ gcc make
+RUN apk update && apk add sudo curl wget py3-pip g++ gcc make go
 RUN apk add --no-cache --upgrade bash
 # RUN usermod -aG sudo 
 # RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers 
