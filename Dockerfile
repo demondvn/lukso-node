@@ -1,4 +1,4 @@
-FROM docker:dind
+FROM docker:latest
 
 RUN apt-get update && apt-get -y install sudo curl wget
 # RUN usermod -aG sudo 
