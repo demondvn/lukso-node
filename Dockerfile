@@ -13,5 +13,8 @@ RUN curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-c
 RUN docker-compose --version
 WORKDIR lukso-l16-testnet
 RUN curl https://install.l16.lukso.network | sudo bash
-RUN lukso -v && lukso network init --chain l16
-CMD lukso network start
+# RUN lukso -v && lukso network init --chain l16
+# CMD lukso network start
+COPY script.sh script.sh
+RUN chmod +x script.sh
+CMD ./script.sh
