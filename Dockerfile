@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-RUN apt-get update && apt-get -y install curl golang-go
+RUN apt-get update && apt-get -y install curl golang-go wget
 
 RUN curl -fsSL https://get.docker.com -o get-docker.sh && \
     sh get-docker.sh
