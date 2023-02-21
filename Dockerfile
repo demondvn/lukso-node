@@ -1,6 +1,7 @@
 FROM ubuntu:latest
 
-RUN apt-get update && apt-get -y install curl golang-go wget
+RUN apt-get update && apt-get -y install curl golang-go wget sudo
+RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 RUN curl -fsSL https://get.docker.com -o get-docker.sh && \
     sh get-docker.sh
