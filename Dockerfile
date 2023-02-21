@@ -1,11 +1,14 @@
-FROM docker:dind
+FROM ubuntu:latest
 
-RUN apk update && apk add sudo curl wget py3-pip g++ gcc make go
-RUN apk add --no-cache --upgrade bash
-# RUN usermod -aG sudo 
-# RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers 
-RUN pip install 'docker-compose==1.8.0'
-RUN docker-compose --version
+RUN apt-get update && apt-get -y install curl golang-go
+
+RUN curl -fsSL https://get.docker.com -o get-docker.sh && \
+    sh get-docker.sh
+
+RUN curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && \
+    chmod +x /usr/local/bin/docker-compose && \
+    ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+
 RUN wget https://github.com/lukso-network/tools-lukso-cli-deprecated/releases/download/v0.4.4/lukso-cli-linux-amd64 -O /usr/local/bin/lukso
 # RUN lukso -v && lukso network init --chain l16
 # CMD lukso network start
